@@ -28,4 +28,18 @@ class Son extends Father {
             throw new WrongAgeException("Son's age cannot be negative!");
         }
         sonAge = sAge;
-        System.out.println("Son's age: " +
+        System.out.println("Son's age: " + sonAge);
+    }
+}
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            Son s1 = new Son(45, 20);
+            Son s2 = new Son(-40, 15);
+            Son s3 = new Son(30, 35);
+        } catch (WrongAgeException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
