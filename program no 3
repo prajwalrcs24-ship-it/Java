@@ -1,0 +1,40 @@
+class Book {
+    String name;
+    String author;
+    double price;
+    int num_pages;
+
+    Book(String name, String author, double price, int num_pages) {
+        this.name = name;
+        this.author = author;
+        this.price = price;
+        this.num_pages = num_pages;
+    }
+
+    String getName() { return name; }
+    String getAuthor() { return author; }
+    double getPrice() { return price; }
+    int getNumPages() { return num_pages; }
+
+    void setName(String name) { this.name = name; }
+    void setAuthor(String author) { this.author = author; }
+    void setPrice(double price) { this.price = price; }
+    void setNumPages(int num_pages) { this.num_pages = num_pages; }
+
+    public String toString() {
+        return name + " | " + author + " | " + price + " | " + num_pages;
+    }
+}
+
+public class BookDemo {
+    public static void main(String[] args) {
+        Book[] books = new Book[3];
+        books[0] = new Book("1984","Orwell",299.99,328);
+        books[1] = new Book("Hobbit","Tolkien",499.50,310);
+        books[2] = new Book("Clean Code","Martin",650.00,464);
+
+        for(Book b : books) {
+            System.out.println(b);
+        }
+    }
+}
