@@ -1,0 +1,31 @@
+class WrongAgeException extends Exception {
+    public WrongAgeException(String message) {
+        super(message);
+    }
+}
+
+class Father {
+    int fatherAge;
+
+    Father(int age) throws WrongAgeException {
+        if (age < 0) {
+            throw new WrongAgeException("Father's age cannot be negative!");
+        }
+        fatherAge = age;
+        System.out.println("Father's age: " + fatherAge);
+    }
+}
+
+class Son extends Father {
+    int sonAge;
+
+    Son(int fAge, int sAge) throws WrongAgeException {
+        super(fAge);
+        if (sAge >= fAge) {
+            throw new WrongAgeException("Son's age cannot be greater than or equal to Father's age!");
+        }
+        if (sAge < 0) {
+            throw new WrongAgeException("Son's age cannot be negative!");
+        }
+        sonAge = sAge;
+        System.out.println("Son's age: " +
